@@ -12,13 +12,14 @@ export async function getCanvases(params) {
   return data;
 }
 
-export function createCanvases(params) {
+export function createCanvases({ title, description, category }) {
   const newCanvas = {
-    title: uuidv4().substring(0, 4) + '_새로운 타이틀',
+    title: title || uuidv4().substring(0, 4) + '임시 포스트',
+    description: description || '기본 설명',
     lastModified: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-    category: '신규',
+    category: category || '신규',
   };
-  return canvasesUrl.post('/', newCanvas);
+  return canvasesUrl.post('/', newCanvas); // 서버에 새 캔버스 데이터 POST
 }
 
 export async function deleteCanvas(id) {

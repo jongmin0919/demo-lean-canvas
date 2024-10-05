@@ -14,6 +14,7 @@ import Contact from './pages/Contact.jsx';
 import Home from './pages/Home.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import CanvasDetail from './pages/CanvasDetail.jsx';
+import CreateCanvas from './pages/CreateCanvas.jsx';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },
       { path: 'canvases/:id', element: <CanvasDetail /> },
+      { path: 'create', element: <CreateCanvas /> },
     ],
     errorElement: <ErrorPage />,
   },

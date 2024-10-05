@@ -30,13 +30,7 @@
       "lastModified": "2023-08-22",
       "category": "신규",
       "problem": {
-        "notes": [
-          {
-            "id": "0f780992-5bc9-4f16-89f2-c7770219bd47",
-            "content": "",
-            "color": ""
-          }
-        ]
+        "notes": []
       },
       "customerSegments": {
         "notes": [
@@ -157,6 +151,20 @@
           }
         ]
       }
+    },
+    {
+      "title": "신규 캔버스",
+      "description": "신규입니다. ",
+      "lastModified": "2024-10-05 23:57:15",
+      "category": "신규",
+      "id": 6
+    },
+    {
+      "title": "처음 만든 캔버스",
+      "description": "신규입니다.",
+      "lastModified": "2024-10-05 23:57:29",
+      "category": "신규",
+      "id": 7
     }
   ]
 }

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import CanvasList from '../components/CanvasList';
 import SearchBar from '../components/SearchBar';
 import ViewToggle from '../components/ViewToggle';
@@ -8,10 +7,12 @@ import { getCanvases, createCanvases, deleteCanvas } from '../api/canvas';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import Button from '../components/Button';
-import useApiRequest from '../hooks/useApiRequest';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+
   const [filter, setFilter] = useState({
     searchText: undefined,
     category: undefined,
@@ -43,6 +44,11 @@ function Home() {
     staleTime: 1000 * 60 * 5,
   });
 
+  const handleCreateCanvas = () => {
+    // 등록 페이지로 이동
+    navigate('/create');
+  };
+
   // React Query로 데이터 등록 - useMutate
   const { mutate: createNewCanvas, isLoading: isLoadingCreate } = useMutation({
     mutationFn: createCanvases,
@@ -71,10 +77,6 @@ function Home() {
     );
   }, [searchText, fetchData]);
   */
-
-  const handleCreateCanvas = async () => {
-    createNewCanvas();
-  };
 
   const handleDeleteItem = async id => {
     if (confirm('정말 삭제하시겠습니까?')) {
